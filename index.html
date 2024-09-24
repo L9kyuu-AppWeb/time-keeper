@@ -14,12 +14,34 @@
         .blinking {
             animation: blink 1s infinite;
         }
+        /* Responsif untuk ukuran layar besar dan kecil */
+        .timer-text {
+            font-size: 18vw; /* Default ukuran font responsif untuk mobile */
+        }
+
+        @media (min-width: 768px) {
+            .timer-text {
+                font-size: 12vw; /* Lebih kecil untuk layar tablet */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .timer-text {
+                font-size: 16vw; /* Ukuran lebih besar khusus untuk layar desktop */
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .timer-text {
+                font-size: 14vw; /* Ukuran lebih besar untuk layar desktop besar (1440px ke atas) */
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-100 h-screen flex items-center justify-center">
     <div id="setupContainer" class="bg-white p-8 rounded shadow-md text-center">
         <h1 class="text-4xl font-bold mb-8">Countdown Timer Setup</h1> <!-- Judul Setup -->
-        
+
         <!-- Input untuk mengubah judul -->
         <div class="mb-6">
             <label for="titleInput" class="block text-gray-700 text-sm font-bold mb-2">Set Timer Title:</label>
@@ -44,7 +66,7 @@
 
     <div id="fullscreenTimer" class="hidden h-screen w-screen bg-gray-900 text-white flex flex-col items-center justify-center">
         <h1 id="fullscreenTitle" class="text-6xl font-bold mb-8">Countdown Timer</h1> <!-- Judul di layar penuh -->
-        <p id="largeTimer" class="text-[18rem] font-bold"></p> <!-- Angka Timer -->
+        <p id="largeTimer" class="timer-text font-bold text-white"></p> <!-- Angka Timer dengan class responsif -->
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
