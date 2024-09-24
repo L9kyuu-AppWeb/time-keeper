@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Countdown Timer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        .blinking {
+            animation: blink 1s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+    <div id="setupContainer" class="bg-white p-8 rounded shadow-md text-center">
+        <h1 class="text-4xl font-bold mb-8">Countdown Timer Setup</h1> <!-- Judul Setup -->
+        
+        <!-- Input untuk mengubah judul -->
+        <div class="mb-6">
+            <label for="titleInput" class="block text-gray-700 text-sm font-bold mb-2">Set Timer Title:</label>
+            <input type="text" id="titleInput" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full" placeholder="Enter Title">
+        </div>
+
+        <!-- Input waktu -->
+        <div class="mb-6">
+            <label for="timeInput" class="block text-gray-700 text-sm font-bold mb-2">Set Timer (hours:minutes:seconds):</label>
+            <input type="number" id="hoursInput" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-20" placeholder="HH">
+            <input type="number" id="minutesInput" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-20" placeholder="MM">
+            <input type="number" id="secondsInput" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-20" placeholder="SS">
+            <button id="setTimeBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Set Time</button>
+        </div>
+
+        <div class="mb-4">
+            <p class="text-2xl font-semibold">Time Left: <span id="timer" class="text-blue-600"></span></p>
+        </div>
+        
+        <button id="startBtn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Start Timer</button>
+    </div>
+
+    <div id="fullscreenTimer" class="hidden h-screen w-screen bg-gray-900 text-white flex flex-col items-center justify-center">
+        <h1 id="fullscreenTitle" class="text-6xl font-bold mb-8">Countdown Timer</h1> <!-- Judul di layar penuh -->
+        <p id="largeTimer" class="text-[18rem] font-bold"></p> <!-- Angka Timer -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="timekeeper.js"></script>
+</body>
+</html>
