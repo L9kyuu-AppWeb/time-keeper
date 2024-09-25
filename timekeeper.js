@@ -10,7 +10,7 @@ let startBtn = document.getElementById('startBtn');
 let setupContainer = document.getElementById('setupContainer');
 let fullscreenTimer = document.getElementById('fullscreenTimer');
 let timer; // Variable to store interval
-let timeLeft = localStorage.getItem('timeLeft') || 3600; // Default 1 hour (in seconds)
+let timeLeft = localStorage.getItem('timeLeft') || 305; // Default 1 hour (in seconds)
 
 // Function to format time in hh:mm:ss
 function formatTime(seconds) {
